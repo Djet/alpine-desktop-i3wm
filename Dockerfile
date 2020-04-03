@@ -4,6 +4,10 @@ RUN set -x \
     && apk add --update --no-cache \
           openrc=0.42.1-r2 \
           xorg-server-xnest=1.20.6-r0 \
+          ttf-dejavu=2.37-r1 \
+          i3wm=4.17.1-r1 \
+          i3status=2.13-r2 \
+          dmenu=4.9-r0 \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
@@ -28,7 +32,7 @@ RUN set -x \
     && sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh \
     && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh
 ADD root/ /
-RUN DEFAULT="Xnest"; \
+RUN DEFAULT="Xnest i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done
 
 CMD ["/sbin/init"]

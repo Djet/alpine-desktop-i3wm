@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+depend() {
+       after Xnest
+}
+
+run() {
+   /usr/bin/i3 &
+}
+
+start() {
+        ebegin "Starting i3wm window manager"
+        run
+        eend $?
+}
