@@ -8,6 +8,9 @@ RUN set -x \
           i3wm=4.17.1-r1 \
           i3status=2.13-r2 \
           dmenu=4.9-r0 \
+          setxkbmap=1.3.2-r0 \
+          mrxvt \
+          chromium=79.0.3945.130-r0 \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
@@ -20,6 +23,8 @@ RUN set -x \
         -e 's/#rc_crashed_start=.*/rc_crashed_start=YES/g' \
         # Define extra dependencies for services
         -e 's/#rc_provide=".*"/rc_provide="loopback net"/g' \
+        # Disable Cgroup
+        -e 's/#rc_controller_cgroups=.*/rc_controller_cgroups=NO/g' \
         /etc/rc.conf \
     # Remove unnecessary services
     && rm -f /etc/init.d/hwdrivers \
@@ -34,5 +39,5 @@ RUN set -x \
 ADD root/ /
 RUN DEFAULT="Xnest i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done
-
+VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/sbin/init"]
