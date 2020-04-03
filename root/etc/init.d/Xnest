@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+depend() {
+       after system.init
+}
+
+run() {
+        export DISPLAY=:0
+         /usr/bin/Xnest :10 &
+}
+
+start() {
+        ebegin "Starting X server"
+        run
+        eend $?
+}
