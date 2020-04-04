@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+USER=user
+create_user() {
+   getent passwd $USER > /dev/null 2&>1
+   if [ $? -eq 0 ]; then
+     echo "user exists"
+   else
+     echo " * create user: $USER"
+     adduser -D -u 1000  -s /bin/zsh -h /home/$USER $USER
+     [ ! -z /home/$USER ] || mkdir -p /home/$USER && chown -R ${USER}. /home/$USER
+     [ ! -f /etc/sudoers.d/$USER ] || echo "$USER  ALL=(ALL)  NOPASSWD: ALL" > /etc/sudoers.d/$USER
+   fi
+}
+
+start() {
+        ebegin "Initialization user"
+        create_user
+        eend $?
+}
