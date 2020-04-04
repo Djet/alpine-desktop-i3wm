@@ -18,7 +18,7 @@ docker build -t shapeos-xnest-i3wm .
 Allow connections for your X11 server
 use:
 ```
-xhost 
+xhost + 
 ```
 
 ## Run
