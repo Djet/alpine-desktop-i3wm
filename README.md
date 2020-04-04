@@ -33,3 +33,7 @@ docker run -it -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tm
 
 ## Screenshots 
 ![screen1](img/screen1.png)
+
+![screen2](img/screen2.png)
+
+![screen3](img/screen3.png)
