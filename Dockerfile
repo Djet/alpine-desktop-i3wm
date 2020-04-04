@@ -5,20 +5,20 @@ RUN set -x \
           openrc=0.42.1-r2 \
           xorg-server-xnest=1.20.6-r0 \
           ttf-dejavu=2.37-r1 \
-          i3wm=4.17.1-r1 \
+#          i3wm=4.17.1-r1 \
           i3status=2.13-r2 \
           dmenu=4.9-r0 \
           setxkbmap=1.3.2-r0 \
-          mrxvt \
+          rxvt-unicode=9.22-r7 \
           zsh \
           git \
           sudo \
- #         tzdata \
+          feh \
           dbus-openrc \
           dbus \
           chromium=79.0.3945.130-r0 \
           udev \
-       && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh  && sh ./install.sh && rm ./install.sh  \
+    && apk add  --no-cache i3wm-gaps --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
