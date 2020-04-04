@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+USER=user
+create_persistent() {
+   [ -d /home ] && [ -L /home ] && return 0
+   
+   if [ -d /persistent ]
+   then
+      rm -rf /home
+      ln -s /persistent /home 
+   fi
+}
+
+start() {
+        ebegin "Initialization persistent storage"
+        create_persistent
+        eend $?
+}

@@ -1,17 +1,19 @@
 FROM alpine:3.11
 ENV DISPLAY :10
+ENV HOSTNAME shapeos
 RUN set -x \
     && apk add --update --no-cache \
           openrc=0.42.1-r2 \
           xorg-server-xnest=1.20.6-r0 \
           ttf-dejavu=2.37-r1 \
-#          i3wm=4.17.1-r1 \
+          ttf-hack=3.003-r1 \
           i3status=2.13-r2 \
           dmenu=4.9-r0 \
           setxkbmap=1.3.2-r0 \
           rxvt-unicode=9.22-r7 \
           zsh \
           git \
+          vim \
           sudo \
           feh \
           dbus-openrc \
@@ -44,11 +46,8 @@ RUN set -x \
     # Can't do cgroups
     && sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh \
     && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh 
-#    # Add user
-#    && USER=user && adduser -D -u 1000  -s /bin/zsh -h /home/$USER $USER  \ 
-#    && mkdir -p /home/$USER && chown -R ${USER}. /home/$USER 
 ADD root/ /
-RUN BOOT="keymaps dbus init.user"; \ 
+RUN BOOT="hostname keymaps dbus init.persistent init.user"; \ 
     for INIT in $BOOT; do rc-update add $INIT boot; done
 RUN DEFAULT="Xnest i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done

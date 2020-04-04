@@ -1,19 +1,35 @@
 #!/sbin/openrc-run
 USER=user
+TEMPLATE_DIR=/usr/share/shapre-os/user-template
+TEMPLATE_FILE="wallpaper.jpg .zshrc .oh-my-zsh .Xdefaults"
+depend() {
+       after init.persistent
+}
+
 create_user() {
    getent passwd $USER > /dev/null 2&>1
    if [ $? -eq 0 ]; then
-     echo "user exists"
+     echo "   ! user exists"
    else
-     echo " * create user: $USER"
      adduser -D -u 1000  -s /bin/zsh -h /home/$USER $USER
      [ ! -z /home/$USER ] || mkdir -p /home/$USER && chown -R ${USER}. /home/$USER
      [ -f /etc/sudoers.d/$USER ] || (echo "$USER  ALL=(ALL)  NOPASSWD: ALL" > /etc/sudoers.d/$USER)
    fi
 }
 
+apply_template() {
+  [ -f /home/$USER/.skeep_apply_user_template ] && return 0
+
+  for FILE in $TEMPLATE_FILE
+   do
+     cp -r $TEMPLATE_DIR/$FILE /home/$USER/$FILE
+   done
+   touch /home/$USER/.skeep_apply_user_template
+   chown -R ${USER}. /home/$USER
+}
 start() {
         ebegin "Initialization user"
         create_user
+        apply_template
         eend $?
 }

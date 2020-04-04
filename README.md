@@ -25,3 +25,11 @@ xhost +
 ```
 docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
 ```
+
+## Run with persistent sotrage
+```
+docker run -it -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
+```
+
+## Screenshots 
+![screen1](img/screen1.png)

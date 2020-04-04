@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+start() {
+        ebegin "Set hostname"
+        hostname $HOSTNAME
+        eend $?
+}
