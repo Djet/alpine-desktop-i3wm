@@ -5,7 +5,7 @@ depend() {
 
 run() {
         export DISPLAY=:0
-         /usr/bin/Xnest :10 &
+        su -c "/usr/bin/Xnest :10" user &
 }
 
 start() {

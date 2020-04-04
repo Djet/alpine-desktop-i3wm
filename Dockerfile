@@ -10,7 +10,15 @@ RUN set -x \
           dmenu=4.9-r0 \
           setxkbmap=1.3.2-r0 \
           mrxvt \
+          zsh \
+          git \
+          sudo \
+ #         tzdata \
+          dbus-openrc \
+          dbus \
           chromium=79.0.3945.130-r0 \
+          udev \
+       && wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh  && sh ./install.sh && rm ./install.sh  \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
@@ -35,8 +43,13 @@ RUN set -x \
             /etc/init.d/modloop \
     # Can't do cgroups
     && sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh \
-    && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh
+    && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh \
+    # Add user
+    && USER=user && adduser -D -u 1000  -s /bin/zsh -h /home/$USER $USER  \ 
+    && mkdir -p /home/$USER && chown -R ${USER}. /home/$USER 
 ADD root/ /
+RUN BOOT="keymaps dbus"; \ 
+    for INIT in $BOOT; do rc-update add $INIT boot; done
 RUN DEFAULT="Xnest i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done
 VOLUME [ "/sys/fs/cgroup" ]

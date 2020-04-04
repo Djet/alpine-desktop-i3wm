@@ -23,5 +23,5 @@ xhost
 
 ## Run
 ```
-docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix  shapeos-xnest-i3wm
+docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
 ```

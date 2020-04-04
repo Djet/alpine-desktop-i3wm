@@ -4,7 +4,8 @@ depend() {
 }
 
 run() {
-   /usr/bin/i3 &
+
+   su -c "/usr/bin/i3" user &
 }
 
 start() {
