@@ -40,9 +40,9 @@ docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent
 ```
 ## Eenvironments
 
-||env||value||description||
-|----|------|------------|
-|GEOMETRY|1280x720|window size| 
+| Env        | Value           | Description  |
+| ------------- |:-------------:| -----:|
+| GEOMETRY     | 1280x720 | window size |
 
 ## Screenshots 
 ![screen1](img/screen1.png)
