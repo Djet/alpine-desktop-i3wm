@@ -28,8 +28,13 @@ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-
 
 ## Run with persistent sotrage
 ```
-docker run -it -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
+docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
 ```
+## Eenvironments
+
+||env||value||description||
+|----|------|------------|
+|GEOMETRY|1280x720|window size| 
 
 ## Screenshots 
 ![screen1](img/screen1.png)

@@ -5,7 +5,13 @@ depend() {
 
 run() {
         export DISPLAY=:0
-        su -c "/usr/bin/Xnest :10" user &
+        PARAM="-sync -name ShapeOS"
+        if [ ! -z $GEOMETRY ]
+        then
+         PARAM="-geometry $GEOMETRY $PARAM"
+         echo $PARAM
+        fi
+        su -p  -c "/usr/bin/Xnest $PARAM :10" user &
 }
 
 start() {
