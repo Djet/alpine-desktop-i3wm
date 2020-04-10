@@ -1,6 +1,11 @@
 # ShapeOS-Xnest-i3wm
 X window system in docker container
 
+Based on [Alpine Linux 3.11](https://alpinelinux.org/)
+Window manager [i3wm-gaps](https://github.com/Airblader/i3)
+Internet browser [Chromium](https://www.chromium.org/)
+Terminal emulator [RXVT](http://rxvt.sourceforge.net/)
+
 ## Get
 
 ```

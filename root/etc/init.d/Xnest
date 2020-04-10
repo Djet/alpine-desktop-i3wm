@@ -11,7 +11,7 @@ run() {
          PARAM="-geometry $GEOMETRY $PARAM"
          echo $PARAM
         fi
-        su -p  -c "/usr/bin/Xnest $PARAM :10" user &
+        su -p  -c "/usr/bin/Xnest $PARAM :10" user  > /var/log/X.log 2&>1 &
 }
 
 start() {

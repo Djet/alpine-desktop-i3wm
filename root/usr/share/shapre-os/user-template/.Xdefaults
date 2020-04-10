@@ -269,15 +269,8 @@ URxvt.secondaryWheel: true
 ! Compile frills: Associate string with keysym sym. The intervening resource name keysym. cannot be omitted.
 ! URxvt*keysym.sym: string
 
-URxvt*perl-ext-common: default,tabbedex,fullscreen,clipboard
+URxvt*perl-ext-common: default 
 URxvt*tabbed.autohide: true
-URxvt*keysym.Control-t: perl:tabbedex:new_tab
-URxvt*keysym.Control-Tab: perl:tabbedex:next_tab
-URxvt*keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
-URxvt*keysym.F11: perl:fullscreen:switch
-URxvt*keysym.M-c: perl:clipboard:copy
-URxvt*keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 ! Comma-separated list(s) of perl extension scripts (default: "default") to use in this terminal instance; option -pe.
 ! URxvt*perl-ext: string
