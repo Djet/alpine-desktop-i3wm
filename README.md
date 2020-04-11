@@ -1,5 +1,5 @@
 ![Docker Image CI](https://github.com/d00t-b-res/ShapeOS-Xnest-i3wm/workflows/Docker%20Image%20CI/badge.svg)
-# ShapeOS-Xnest-i3wm
+# ShapeOS on Xnest with i3wm
 X window system in docker container
 
 Based on [Alpine Linux 3.11](https://alpinelinux.org/)
