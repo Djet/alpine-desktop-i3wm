@@ -10,7 +10,7 @@ run() {
         then
          PARAM="-geometry $GEOMETRY $PARAM"
         fi
-        su -p  -c "/usr/bin/Xnest $PARAM :10" user  > /var/log/X.log 2&>1 &
+        su -p  -c "/usr/bin/Xephyr -fullscreen $PARAM :10" user  > /var/log/X.log 2&>1 &
 }
 
 start() {
