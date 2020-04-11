@@ -34,7 +34,7 @@ docker pull bres/shapeos-xnest-i3wm:latest
 Allow connections for your X11 server
 use:
 ```
-xhost + 
+xhost +localhost
 ```
 
 ## Run
