@@ -9,7 +9,6 @@ run() {
         if [ ! -z $GEOMETRY ]
         then
          PARAM="-geometry $GEOMETRY $PARAM"
-         echo $PARAM
         fi
         su -p  -c "/usr/bin/Xnest $PARAM :10" user  > /var/log/X.log 2&>1 &
 }
