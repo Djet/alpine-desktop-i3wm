@@ -10,6 +10,8 @@ Internet browser [Chromium](https://www.chromium.org/)
 
 Terminal emulator [RXVT](http://rxvt.sourceforge.net/)
 
+zsh theme [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+
 ## Get
 
 ```
