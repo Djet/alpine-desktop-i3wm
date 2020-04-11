@@ -1,4 +1,5 @@
-# ShapeOS-Xnest-i3wm
+![Docker Image CI](https://github.com/d00t-b-res/ShapeOS-Xnest-i3wm/workflows/Docker%20Image%20CI/badge.svg)
+# ShapeOS on Xnest with i3wm
 X window system in docker container
 
 Based on [Alpine Linux 3.11](https://alpinelinux.org/)
@@ -20,6 +21,11 @@ git clone git@github.com:d00t-b-res/ShapeOS-Xnest-i3wm.git
 ```
 docker build -t shapeos-xnest-i3wm .
 ```
+or Docker hub:
+
+```
+docker pull bres/shapeos-xnest-i3wm:latest
+```
 
 ## Configure
 
@@ -40,9 +46,9 @@ docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent
 ```
 ## Eenvironments
 
-||env||value||description||
-|----|------|------------|
-|GEOMETRY|1280x720|window size| 
+| Env        | Value           | Description  |
+| ------------- |:-------------:| -----:|
+| GEOMETRY     | 1280x720 | window size |
 
 ## Screenshots 
 ![screen1](img/screen1.png)
