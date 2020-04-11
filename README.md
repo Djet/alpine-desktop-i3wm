@@ -21,6 +21,11 @@ git clone git@github.com:d00t-b-res/ShapeOS-Xnest-i3wm.git
 ```
 docker build -t shapeos-xnest-i3wm .
 ```
+or Docker hub:
+
+```
+docker pull bres/shapeos-xnest-i3wm:latest
+```
 
 ## Configure
 
