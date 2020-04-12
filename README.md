@@ -1,4 +1,6 @@
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bres/alpine-desktop-i3wm)# Alpine desktop on i3wm
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bres/alpine-desktop-i3wm)
+
+# Alpine desktop on i3wm
 
 X window system in docker container
 
