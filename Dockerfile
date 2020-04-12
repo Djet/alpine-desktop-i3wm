@@ -57,7 +57,7 @@ RUN set -x \
 COPY root/ /
 RUN BOOT="hostname keymaps dbus init.persistent init.user"; \ 
     for INIT in $BOOT; do rc-update add $INIT boot; done
-RUN DEFAULT="Xnest i3wm"; \
+RUN DEFAULT="X i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/sbin/init"]
