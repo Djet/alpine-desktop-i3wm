@@ -16,7 +16,6 @@ run() {
         then 
          PARAM="-fullscreen $PARAM"
         fi
-        echo $PARAM
         su -p  -c "/usr/bin/Xephyr $PARAM :10" user  > /var/log/X.log 2&>1 &
 }
 
