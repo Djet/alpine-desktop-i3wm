@@ -1,5 +1,4 @@
-![Docker Image CI](https://github.com/d00t-b-res/ShapeOS-Xnest-i3wm/workflows/Docker%20Image%20CI/badge.svg)
-# Alpine desktop on i3wm
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bres/alpine-desktop-i3wm)# Alpine desktop on i3wm
 
 X window system in docker container
 
