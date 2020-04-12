@@ -5,11 +5,18 @@ depend() {
 
 run() {
         export DISPLAY=:0
-        PARAM="-sync -name Alpine desktop"
-        if [ ! -z $FULLSCREEN ]
+        PARAM="-sync -name Alpine-desktop"
+        if [ ! -z $SCREEN ]
+        then
+          PARAM="-screen $SCREEN $PARAM"
+        else
+          PARAM="-screen 1280x720 $PARAM"
+        fi
+        if [ ! -z $FULLSCREEN ] && [ -z $SCREEN ]
         then 
          PARAM="-fullscreen $PARAM"
         fi
+        echo $PARAM
         su -p  -c "/usr/bin/Xephyr $PARAM :10" user  > /var/log/X.log 2&>1 &
 }
 
