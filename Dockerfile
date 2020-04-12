@@ -5,7 +5,7 @@ ENV DBUS_SYSTEM_BUS_ADDRESS unix:path=/var/run/dbus/system_bus_socket
 RUN set -x \
     && apk add --update --no-cache \
           openrc=0.42.1-r2 \
-          xorg-server-xnest=1.20.6-r0 \
+          xorg-server-xephyr \
           ttf-dejavu=2.37-r1 \
           ttf-hack=3.003-r1 \
           i3status=2.13-r2 \
@@ -57,7 +57,7 @@ RUN set -x \
 COPY root/ /
 RUN BOOT="hostname keymaps dbus init.persistent init.user"; \ 
     for INIT in $BOOT; do rc-update add $INIT boot; done
-RUN DEFAULT="Xnest i3wm"; \
+RUN DEFAULT="X i3wm"; \
     for INIT in $DEFAULT; do rc-update add $INIT default; done
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/sbin/init"]
