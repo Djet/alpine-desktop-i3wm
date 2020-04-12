@@ -18,18 +18,18 @@ X window system in docker container
 ## Get
 
 ```
-git clone git@github.com:d00t-b-res/ShapeOS-Xnest-i3wm.git
+git clone git@github.com:djet-sb/alpine-desktop-i3wm.git
 ```
 
 ## Build
 
 ```
-docker build -t shapeos-xnest-i3wm .
+docker build -t alpine-desktop-i3wm .
 ```
 or Docker hub:
 
 ```
-docker pull bres/shapeos-xnest-i3wm:latest
+docker pull bres/alpine-desktop-i3wm:latest
 ```
 
 ## Configure
@@ -42,12 +42,12 @@ xhost +localhost
 
 ## Run
 ```
-docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
+docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host alpine-desktop-i3wm
 ```
 
 ## Run with persistent sotrage
 ```
-docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host shapeos-xnest-i3wm
+docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host alpine-desktop-i3wm
 ```
 ## Eenvironments
 
