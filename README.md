@@ -58,4 +58,4 @@ docker run -it -e FULLSCREEN=true -v /var/lib/shapeos-xnest-i3wm2:/persistent -v
 | FULLSCREEN     | false | fullscreen |
 
 ## Demo 
-![demo](img/demo.gif)
+![demo](https://github.com/djet-sb/alpine-desktop-i3wm/blob/master/img/demo.gif?raw=true)
