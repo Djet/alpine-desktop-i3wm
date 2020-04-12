@@ -56,9 +56,5 @@ docker run -it -e GEOMETRY=1280x720  -v /var/lib/shapeos-xnest-i3wm2:/persistent
 | SCREEN     | 1280x720 | window size |
 | FULLSCREEN     | true | fullscreen |
 
-## Screenshots 
-![screen1](img/screen1.png)
-
-![screen2](img/screen2.png)
-
-![screen3](img/screen3.png)
+## Demo 
+![demo](img/demo.gif)
