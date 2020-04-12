@@ -1,8 +1,11 @@
 ![Docker Image CI](https://github.com/d00t-b-res/ShapeOS-Xnest-i3wm/workflows/Docker%20Image%20CI/badge.svg)
-# ShapeOS on Xnest with i3wm
+# Alpine desktop on i3wm
+
 X window system in docker container
 
 - based on [Alpine Linux 3.11](https://alpinelinux.org/)
+
+- X serger [Xephyr](https://freedesktop.org/wiki/Software/Xephyr/)
 
 - window manager [i3wm-gaps](https://github.com/Airblader/i3)
 
