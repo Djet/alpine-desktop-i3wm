@@ -1,4 +1,4 @@
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bres/alpine-desktop-i3wm)](https://hub.docker.com/r/bres/alpine-desktop-i3wm)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/bres/alpine-desktop-i3wm)](https://hub.docker.com/r/bres/alpine-desktop-i3wm)  [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/bres/alpine-desktop-i3wm/latest)](https://hub.docker.com/r/bres/alpine-desktop-i3wm/tags)
 
 # Alpine desktop on i3wm
 
