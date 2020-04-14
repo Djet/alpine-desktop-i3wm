@@ -38,7 +38,7 @@ docker pull bres/alpine-desktop-i3wm:latest
 Allow connections for your X11 server
 use:
 ```
-xhost +localhost
+xhost local:   
 ```
 
 ## Run
