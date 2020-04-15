@@ -43,7 +43,7 @@ xhost local:
 
 ## Run
 ```
-docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host alpine-desktop-i3wm
+docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc host alpine-desktop-i3wm
 ```
 
 ## Run with persistent sotrage
