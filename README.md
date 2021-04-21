@@ -4,7 +4,7 @@ X window system in docker container
 ## Get
 
 ```
-git clone git@github.com:d00t-b-res/ShapeOS-Xnest-i3wm.git
+git@github.com:Djet/alpine-desktop-i3wm.git
 ```
 
 ## Build
