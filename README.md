@@ -48,7 +48,7 @@ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc host alpin
 
 ## Run with persistent sotrage
 ```
-docker run -it -e FULLSCREEN=true -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --ipc host alpine-desktop-i3wm
+docker run -it -e FULLSCREEN=true -v /var/lib/shapeos-xnest-i3wm2:/persistent -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc host alpine-desktop-i3wm
 ```
 ## Eenvironments
 
