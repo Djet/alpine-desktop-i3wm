@@ -9,6 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# socket path
+ipc-socket /tmp/.i3/i3-ipc.sock
+
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
